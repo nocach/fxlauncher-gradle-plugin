@@ -33,7 +33,7 @@ class FXLauncherPlugin implements Plugin<Project> {
         boolean defaultDependenciesSupported = configuration.respondsTo('defaultDependencies')
         if (defaultDependenciesSupported) {
             configuration.defaultDependencies { dependencies ->
-                dependencies.add(project.dependencies.create('com.github.nocach:fxlauncher:000263a8e8de00688a3b23716444a096bde7d8b8'))
+                dependencies.add(project.dependencies.create('com.github.nocach:fxlauncher:1927c51a5a86ac87800209ec913f1787a05f8d4e'))
             }
         }
 
@@ -45,7 +45,7 @@ class FXLauncherPlugin implements Plugin<Project> {
             }
             if (!defaultDependenciesSupported) {
                 project.dependencies {
-                    "${CONFIGURATION_NAME}"('com.github.nocach:fxlauncher:4dab33130619e5cd529967146c4b7e93d88d86ab')
+                    "${CONFIGURATION_NAME}"('com.github.nocach:fxlauncher:1927c51a5a86ac87800209ec913f1787a05f8d4e')
                 }
             }
         }
