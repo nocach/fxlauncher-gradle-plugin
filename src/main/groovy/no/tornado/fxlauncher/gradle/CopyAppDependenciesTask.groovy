@@ -26,7 +26,7 @@ public class CopyAppDependenciesTask extends DefaultTask {
     void copyDependencies() {
         File workingDirectory = project.extensions.fxlauncher.resolveWorkingDirectory()
         if (!workingDirectory.exists()) workingDirectory.mkdirs()
-        project.configurations.runtime.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+        project.configurations.runtimeClasspath.resolvedConfiguration.resolvedArtifacts.each { artifact ->
             project.copy {
                 from artifact.file
                 into workingDirectory

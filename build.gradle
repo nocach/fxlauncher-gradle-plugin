@@ -66,55 +66,6 @@ group = "no.tornado"
 archivesBaseName = "fxlauncher-gradle-plugin"
 version = "1.0.21.1"
 
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
-
-            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            pom.project {
-                name 'FXLauncher Gradle plugin'
-                packaging 'jar'
-                // optionally artifactId can be defined here
-                description 'FXLauncher Gradle plugin'
-                url 'https://github.com/edvin/fxlauncher-gradle-plugin'
-
-                scm {
-                    connection 'scm:svn:https://github.com/edvin/fxlauncher-gradle-plugin'
-                    developerConnection 'scm:svn:https://github.com/edvin/fxlauncher-gradle-plugin'
-                    url 'https://github.com/edvin/fxlauncher-gradle-plugin'
-                }
-
-                licenses {
-                    license {
-                        name 'The Apache License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-
-                developers {
-                    developer {
-                        id 'aalmiray'
-                        name 'Andres Almiray'
-                    }
-                    developer {
-                        id 'edvin'
-                        name 'Edvin Syse'
-                        email 'es@syse.no'
-                    }
-                }
-            }
-        }
-    }
-}
-
 task javadocJar(type: Jar) {
     classifier = 'javadoc'
     from javadoc

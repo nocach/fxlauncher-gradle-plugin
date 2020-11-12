@@ -33,7 +33,7 @@ class FXLauncherPlugin implements Plugin<Project> {
         boolean defaultDependenciesSupported = configuration.respondsTo('defaultDependencies')
         if (defaultDependenciesSupported) {
             configuration.defaultDependencies { dependencies ->
-                dependencies.add(project.dependencies.create('no.tornado:fxlauncher:' + extension.fxlauncherVersion))
+                dependencies.add(project.dependencies.create('com.github.nocach:fxlauncher:4dab33130619e5cd529967146c4b7e93d88d86ab'))
             }
         }
 
@@ -45,7 +45,7 @@ class FXLauncherPlugin implements Plugin<Project> {
             }
             if (!defaultDependenciesSupported) {
                 project.dependencies {
-                    "${CONFIGURATION_NAME}"('no.tornado:fxlauncher:' + extension.fxlauncherVersion)
+                    "${CONFIGURATION_NAME}"('com.github.nocach:fxlauncher:4dab33130619e5cd529967146c4b7e93d88d86ab')
                 }
             }
         }
